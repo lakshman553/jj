@@ -74,12 +74,14 @@
     <Content Include="images\6.png" />
     <Content Include="images\7.png" />
     <Content Include="images\8.png" />
+    <Content Include="images\banner.jpg" />
     <Content Include="images\form_bg.jpg" />
     <Content Include="js\placeholder.min.js" />
     <Content Include="fonts\icomoon\.DS_Store" />
     <Content Include="fonts\icomoon\icomoon.eot" />
     <Content Include="fonts\icomoon\icomoon.ttf" />
     <Content Include="fonts\icomoon\icomoon.woff" />
+    <Content Include="topdonors.aspx" />
     <None Include="Properties\PublishProfiles\new.jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -130,6 +132,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="topdonors.aspx.cs">
+      <DependentUpon>topdonors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="topdonors.aspx.designer.cs">
+      <DependentUpon>topdonors.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
