@@ -1,0 +1,29 @@
+/* slider Section */.slider-section .slide-title,[class*="video-section-"] .slide-title {	position: absolute;	width: 500px;	height: 500px;	border-radius: 50%;	border: 2px solid rgba(255,255,255, 0.20);	left: 0;	right: 0;	margin: 0 auto;	top: 25%;	color: #fff;	text-transform: uppercase;	padding: 48px 0;	z-index: 1;}
+.slider-section .slide-title span.inner-circle,[class*="video-section-"] .slide-title span.inner-circle {	width: 400px;	height: 400px;	border: 2px solid #fff;	border-radius: 50%;	display: block;	margin: 0 auto;	padding: 0;}.slider-section .slide-title span.inner-circle span:first-child,[class*="video-section-"] .slide-title span.inner-circle span:first-child {	padding-top: 93px;}.slider-section .slide-title span.inner-circle span:last-child,[class*="video-section-"] .slide-title span.inner-circle span:last-child {	padding-bottom: 93px;}.inner-circle img {	border-radius: 100%;	width: 100% !important;	height: 100% !important;	position: relative !important;	top: 0 !important;	left: 0 !important;}
+.slider-section .slide-title span.inner-circle span,[class*="video-section-"] .slide-title span.inner-circle span {	display: block;	text-align: center;}
+.slider-section .slide-title span.inner-circle span:nth-child(1),[class*="video-section-"] .slide-title span.inner-circle span:nth-child(1) {	font-size: 69px;}
+.slider-section .slide-title span.inner-circle span:nth-child(2),[class*="video-section-"] .slide-title span.inner-circle span:nth-child(2) {	font-size: 63px;}
+.slider-section .slide-title span.inner-circle span:nth-child(3),[class*="video-section-"] .slide-title span.inner-circle span:nth-child(3) {	font-size: 60px;}
+.slider-section .slide-sub-title,[class*="video-section-"] .slide-sub-title {	color: #fff;	text-transform: uppercase;	font-size: 72px;	line-height: 80px;	bottom: 101px;	position: absolute;	left: 76px;	font-weight: bold;	display: none;}
+.slider-section .slide-sub-title span,[class*="video-section-"] .slide-sub-title span {	display: block;}
+.slider-content {	position: absolute;	top: 0;	height: 100%;	width: 100%;}
+.right,.left {	position: absolute;	top: 0;	height: 100%;	width: 50%;	left: 0; 	right: auto;}
+.right .slide-sub-title {	text-align: right;	right: 76px;	left: auto;}
+.right {	left: auto;	right: 0;}
+.left:hover .slide-sub-title,.right:hover .slide-sub-title  {	display: block;}.primary-navigation .dropdown-menu > li > a:focus {    background-color: transparent;}
+[class*="video-section-"] .slide-title {	top: 8%;}
+/* ## //- Header Section */.header-section {	background-color: #e74c3c;	width: 100%;	min-height: 90px;	position: relative;	overflow:visible !important;}.header-section.navbar-fixed-top {	position: fixed;	top: 0;	z-index: 9999;}
+/* Logo Block */.logo-block {	line-height: 90px;	/* padding-left: 70px; */}/* Navigation Menu */.menu-block .navbar-default {	background-color: transparent;	border: none;}
+.menu-block .navbar {	margin-bottom: 0;}
+.menu-block .navbar-nav > li {	padding: 0 5px;}
+.menu-block .navbar-nav > li > a {	color: #fff;	text-transform: uppercase;	line-height: 60px;}.menu-block .nav > li.open > a,.menu-block .nav > li.open > a:hover,.menu-block .nav > li.open > a:focus {	background-color: transparent;	color: #000;}
+.menu-block .nav > li.dropdown > ul.dropdown-menu,.menu-block .nav > li > ul li ul {	background-color: #E74C3C;	border: none;	box-shadow: none;	min-width: 120px;	border-radius: 0;}
+.menu-block .nav li.dropdown ul.dropdown-menu li  a {	color: #fff;	font-weight: 600;	font-size: 13px;	padding: 5px 15px;}
+.menu-block .nav > li.dropdown > ul.dropdown-menu > li  a:hover,.dropdown-menu > .active > a, .dropdown-menu > .active > a:focus, .dropdown-menu > .active > a:hover {	background-color: transparent;	color: #000;}.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover,.menu-block .nav .open > a, .menu-block .nav .open > a:focus, .menu-block .nav .open > a:hover {	background-color: transparent;}
+
+.menu-block .nav  li > ul li ul {	left: 120px;	top: 0;}
+.menu-block .nav  li > ul li ul li ul li ul li ul {	right: 120px;	left: auto;}
+.open.dropdown > .dropdown-menu {	display: block;}
+.menu-block .nav li:hover > .dropdown-menu {	display: block;}
+.menu-block .nav > li:last-child  ul.dropdown-menu {	left: 0px;}
+.menu-block .nav > li:last-child  ul.dropdown-menu ul {	right: 144px;	left: auto;}

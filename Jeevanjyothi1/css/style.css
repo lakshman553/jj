@@ -1,0 +1,462 @@
+
+        
+/*************** Call To Action ***************/
+
+.call-action-boxed {
+	padding: 20px 20px;
+}
+
+.call-action.no-descripton h2.primary {
+	margin-top: 4px;
+}
+
+.call-action h2.primary {
+	font-weight: 500;
+}
+
+.call-action h2.primary strong {
+	font-weight: 700;
+}
+
+.call-action p {
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+.call-action h2 + p {
+	margin-top: 4px;
+}
+
+.call-action .button-side {
+	float: right;
+}
+
+.call-action-style1 {
+	border: 1px solid #e8e8e8;
+ 	box-shadow: 0 0 25px rgba(0,0,0,.04) inset;
+	-o-box-shadow: 0 0 25px rgba(0,0,0,.04) inset;
+	-moz-box-shadow: 0 0 25px rgba(0,0,0,.04) inset;
+  	-webkit-box-shadow: 0 0 25px rgba(0,0,0,.04) inset;
+	box-shadow: 5px 5px 5px  #888888;  
+	border-radius: 15px 15px 0 0;
+	background: white;
+ }
+
+.call-action-style1 .title{
+	
+	color: #ff0000;
+	font-size: 18px;
+	
+	
+}
+
+	.cas1-title .help{
+		padding-right:10px;
+		padding-top:5px;
+		
+	}
+
+.call-action-style2 {
+	background: #f2f2f2;
+}
+
+.call-action-style3 {
+	background: #444;
+}
+
+.call-action-style3 h2.primary {
+	color: #fff;
+}
+
+.call-action-style3 p {
+	color: #bbb;
+}
+
+/********** Buttons **********/
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 8px;
+	display: inline-block;
+	margin: 5px 10px;
+	letter-spacing: 0px;
+	font-weight: 500;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-1 {
+	border: 3px solid #FFB2B2;
+	color: red;
+}
+
+/* Button 1a */
+.btn-1a:hover,
+.btn-1a:active {
+	color: red;
+	background:#FFB2B2;
+}
+
+form:last-child {
+	margin-bottom: 10px;
+}
+
+
+input, select {
+	margin-left:20px;	
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid gray;
+    width: 150px;
+	color: #b03060;
+	font-weight:15px;
+}
+
+label {
+	width: 50px;
+}
+
+fieldset {
+	padding-bottom: 12px;
+}
+
+/*************** CSS Menu ***************/
+
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu #menu-button {
+  display: none;
+}
+#cssmenu {
+  width: auto;
+  border-radius: 4px;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1;
+  background: #bfdba7;
+  background: -webkit-linear-gradient(top, #f02f24, #ffffff);
+  background: -ms-linear-gradient(top, #f02f24, #ffffff);
+  background: -moz-linear-gradient(top, #f02f24, #ffffff);
+  background: -o-linear-gradient(top, #f02f24, #ffffff);
+  background: linear-gradient(to bottom, #f02f24, #ffffff);
+ /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), inset 0 -2px 0px #aacf8a, inset 0 1px 0 #d4e7c4; */
+}
+#cssmenu > ul > li {
+  float: right;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu > ul > li > a {
+  padding: 20px 25px 21px 25px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#cssmenu > ul > li:first-child > a {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+#cssmenu.align-center > ul > li:first-child > a {
+  border-radius: 0;
+}
+#cssmen.align-right > ul > li:first-child > a {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li.active > a {
+  color: #444444;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  background: rgba(125, 125, 125, 0.04);
+}
+#cssmenu > ul > li:after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 0;
+  display: block;
+  height: 20px;
+  width: 1px;
+  opacity: .15;
+  background: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0), #000000, rgba(0, 0, 0, 0));
+}
+#cssmenu.align-right > ul > li:after {
+  right: auto;
+  left: -1px;
+}
+#cssmenu > ul > li:before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: -1px;
+  display: block;
+  height: 20px;
+  width: 1px;
+  opacity: .35;
+  background: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.01), #ffffff, rgba(255, 255, 255, 0.01));
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0), #ffffff, rgba(0, 0, 0, 0));
+}
+#cssmenu.align-right > ul > li:before {
+  right: auto;
+  left: 0px;
+}
+#cssmenu > ul > li:last-child:after,
+#cssmenu > ul > li:last-child:before {
+  display: none;
+}
+#cssmenu.small-screen {
+  width: 100%;
+}
+#cssmenu.small-screen > ul,
+#cssmenu.small-screen.align-center > ul {
+  width: 100%;
+  text-align: left;
+}
+#cssmenu.small-screen > ul > li,
+#cssmenu.small-screen.align-center {
+  float: none;
+  display: block;
+  border-top: 1px solid rgba(100, 100, 100, 0.1);
+}
+#cssmenu.small-screen > ul > li > a {
+  padding: 18px 25px;
+}
+#cssmenu.small-screen > ul > li:after,
+#cssmenu.small-screen > ul > li:before {
+  display: none;
+}
+#cssmenu.small-screen #menu-button {
+  display: block;
+  padding: 18px 25px 19px 25px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  color: #fcfefb;
+}
+#cssmenu.small-screen #menu-button.menu-opened {
+  color: #444444;
+}
+#cssmenu.small-screen #menu-button:after {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  display: block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border-top: 2px solid #fcfefb;
+  border-bottom: 2px solid #fcfefb;
+  width: 18px;
+  height: 3px;
+}
+#cssmenu.small-screen #menu-button.menu-opened:after {
+  border-top: 2px solid #444444;
+  border-bottom: 2px solid #444444;
+}
+#cssmenu.small-screen #menu-button:before {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 30px;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fcfefb;
+}
+#cssmenu.small-screen #menu-button.menu-opened:before {
+  background: #444444;
+}
+
+.glow {
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-name: glow;
+            animation-name: glow;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-name: glow;
+            animation-name: glow;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    color: white;
+    font-family: 'Limelight', cursive;
+    font-size: 90px;
+    z-index: 555;
+    padding-top:25px;
+}
+
+@-webkit-keyframes glow {
+    from { text-shadow: 0 0 5px maroon; }
+    to { text-shadow: 0 0 15px maroon; }
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px maroon; }
+    to { text-shadow: 0 0 15px maroon; }
+}
+	h1 {
+    letter-spacing: 8px;
+}
+
+.logo img  {
+	padding-left: 14px;
+	padding-bottom: 5px;
+	padding-top: 8px;
+	
+	
+}
+
+marquee img {
+	height:128px;
+	padding-left:10px;
+	padding-right:10px;
+	border-left:solid 1px gray;
+}
+
+marquee img:last-child {
+	
+	border-right:solid 1px gray;
+}
+
+.nav-tabs {
+	border-color: #eee;
+}
+
+.nav-tabs > li > a {
+	font-weight: 600;
+	color: #666;
+	padding: 8px 14px;
+	border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -o-border-radius: 3px 3px 0 0;
+	border: 1px solid #eee;
+	border-bottom: none;
+	box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
+	-o-box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
+	-moz-box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
+  	-webkit-box-shadow: 0 0 15px rgba(0,0,0,.04) inset;
+	transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.nav-tabs > li > a i {
+	margin-right: 1px;
+    padding-right: 5px;
+}
+
+.nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+	color: #fff;
+	border-color: #fff;
+	box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
+	-o-box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
+	-moz-box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
+  	-webkit-box-shadow: 0 0 15px rgba(0,0,0,.1) inset;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	border-color: #eee;
+	border-bottom-color: #fff;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
+	box-shadow: 0 0 0 rgba(0,0,0,.1) inset;
+	-o-box-shadow: 0 0 0 rgba(0,0,0,.1) inset;
+	-moz-box-shadow: 0 0 0 rgba(0,0,0,.1) inset;
+  	-webkit-box-shadow: 0 0 0 rgba(0,0,0,.1) inset;
+}
+
+.tab-content {
+	border: 1px solid #eee;
+	border-top: none;
+	padding: 12px 16px;
+}
+
+.tab-content p {
+	margin-bottom: 15px;
+}
+
+.tab-content p:last-child {
+	margin-bottom: 0;
+}
+
+
