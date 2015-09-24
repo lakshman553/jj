@@ -59,8 +59,10 @@
   <ItemGroup>
     <Content Include="css\cs-select.css" />
     <Content Include="css\cs-skin-circular.css" />
+    <Content Include="css\donoros.css" />
     <Content Include="css\header.css" />
     <Content Include="css\normalize.css" />
+    <Content Include="donors.aspx" />
     <Content Include="fonts\elegant\ElegantIcons.eot" />
     <Content Include="fonts\elegant\ElegantIcons.ttf" />
     <Content Include="fonts\elegant\ElegantIcons.woff" />
@@ -81,7 +83,6 @@
     <Content Include="fonts\icomoon\icomoon.eot" />
     <Content Include="fonts\icomoon\icomoon.ttf" />
     <Content Include="fonts\icomoon\icomoon.woff" />
-    <Content Include="topdonors.aspx" />
     <None Include="Properties\PublishProfiles\new.jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -118,6 +119,13 @@
     <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="donors.aspx.cs">
+      <DependentUpon>donors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="donors.aspx.designer.cs">
+      <DependentUpon>donors.aspx</DependentUpon>
+    </Compile>
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,13 +140,6 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="topdonors.aspx.cs">
-      <DependentUpon>topdonors.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="topdonors.aspx.designer.cs">
-      <DependentUpon>topdonors.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
