@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Donor Registration</title>
     <%--    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
 
@@ -33,59 +33,58 @@
             <div class="panel panel-danger">
                 <div class="panel-heading">Register As Donor</div>
                 <div class="panel-body">
-                    <form class="form-horizontal">
-                        <fieldset>
+                    <form class="form-horizontal" >
 
                             <div class="form-group">
 
-                                <label for="inputName" class="col-lg-2 control-label">Name<span class="text-danger"><sup>*</sup></span></label>
+                                <label for="fullName" class="col-lg-2 control-label">Name<span class="text-danger"><sup><b>*</b></sup></span></label>
                                 <div class="col-lg-8">
-                                    <input type="email" class="form-control " id="inputName" />
+                                    <input type="text" class="form-control " id="fullName" required="required" />
                                     <span class="help-block ">Enter your full name</span>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">Blood Group<span class="text-danger"><sup>*</sup></span></label>
+                                <label class="col-lg-2 control-label">Blood Group<span class="text-danger"><sup><b>*</b></sup></span></label>
                                 <div class="col-lg-8">
 
-                                    <div class="btn-group " data-toggle="buttons">
+                                    <div class="btn-group " id="bloodGrpDiv" data-toggle="buttons"  >
 
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="1" required="required"/>
                                             O +
                                         </label>
 
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="2" required="required"/>
                                             O -
                                         </label>
 
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="3" required="required"/>
                                             A +
                                         </label>
 
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="4" required="required"/>
                                             A -
                                         </label>
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="5" required="required"/>
                                             B +
                                         </label>
 
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="6" required="required"/>
                                             B -
                                         </label>
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="7" required="required"/>
                                             AB +
                                         </label>
 
                                         <label class="btn btn-danger active">
-                                            <input type="radio" name="options" />
+                                            <input type="radio" name="bloodGrpRadio" value="8" required="required"/>
                                             AB -
                                         </label>
 
@@ -97,32 +96,27 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">Mobile No.<span class="text-danger"><sup>*</sup></span></label>
+                                <label class="col-lg-2 control-label">Mobile No.<span class="text-danger"><sup><b>*</b></sup></span></label>
                                 <div class="col-lg-8">
                                     <div class="input-group">
                                         <span class="input-group-addon">+91</span>
-                                        <input type="text" class="form-control" />
+                                        <input type="number" class="form-control" required="required" id="mobileNo"/>
                                     </div>
                                     <span class="help-block">Enter your mobile number without +91</span>
                                 </div>
 
                             </div>
 
-                            
-                            
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">Current City<span class="text-danger"><sup>*</sup></span></label>
+                                <label class="col-lg-2 control-label">Current City<span class="text-danger"><sup><b>*</b></sup></span></label>
                                 <div class="col-lg-8">
 
-                                    <input type="text" class="form-control" />
+                                    <input type="text" class="form-control"  required="required"/>
                                     <span class="help-block">Enter your City</span>
                                 </div>
 
                             </div>
 
-                            
-
-                            
                             <div class="form-group">
 
                                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -141,15 +135,26 @@
                                 </div>
 
                             </div>
+                              <div class="form-group">
+                                <label class="col-lg-2 control-label">&nbsp;</label>
+                                <div class="col-lg-8">
 
+                            <div class="g-recaptcha" data-size="normal" data-sitekey="6Lfsxw0TAAAAAMss0Bp_MXgkkokiHyIkfBISTz2X"></div>
+                                    <span class="help-block">Please select the check-box </span>
+
+                                    </div>  
+                        </div>
                             <br />
                             <div class="form-group">
                                 <div class="col-lg-8 col-lg-offset-2">
                                     <button type="submit" class="btn btn-danger">Register</button>
                                     <button type="reset" class="btn btn-default">Cancel</button>
+                                    <span class="help-block">By clicking on register, you agree to the Terms & Conditions of Jeevanjyothi.org</span>
+                                
                                 </div>
+
                             </div>
-                        </fieldset>
+                      
                     </form>
 
                 </div>
@@ -159,6 +164,32 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
+    <script>
+        $(document).ready(function () {
+
+            
+            //});     
+        });
+        
+
+        $(".form-horizontal").submit(function (e) {
+            e.preventDefault();
+
+            //alert($('input[name=bloodGrpRadio]:checked').val());
+
+            var url = "http://www.metamorphsystems.com/index.php/api/bulk-sms?username=sujanmanikanta&password=123456&from=JVNJYT&to=";
+            var message = "Dear " + $('#fullName').val() + ", Thank you for registering with Jeevanjyothi.org. ";
+            url = url + $("#mobileNo").val() + '&message=' + encodeURIComponent(message);
+
+            $.ajax({
+                url: url
+                });
+        });
+
+
+       
+    </script>
 </body>
 </html>
