@@ -1,67 +1,148 @@
-﻿        body {
-            background-color: lightblue;
-            background-image: url("images/brushed-alum-dark.png");
-            background-repeat: repeat;
-        }
+﻿body {
+    background-color: lightblue;
+    background-image: url("../images/brushed-alum-dark.png");
+    background-repeat: repeat;
+}
+.box {
+    width: 200px;
+    height: 250px;
+    position: relative;
+    border: 1px solid #BBB;
+    background: #EEE;
+    text-underline-position:right;
+    box-shadow: 7px 7px 5px  #888888;
+}
 
-        .box {
-            width: 200px;
-            height: 300px;
-            position: relative;
-            border: 1px solid #BBB;
-            background: #EEE;
-        }
+.donorbox {
+    width: auto;
+    height: auto;
+    position: relative;
+    padding:20px;
+    padding-bottom:100px;
+    border: 1px solid #BBB;
+    background-color: transparent ;
+    box-shadow: 5px 5px 5px #888888;
+}
 
-        .ribbon {
+.titlebox {
+    width: auto;
+    height: auto;
+    text-align:center;
+    border: 1px solid #BBB;
+    background-color: transparent ;
+    box-shadow: 5px 5px 5px #888888;
+    margin-bottom:15px;
+
+}
+
+
+.box img {
+    width: 98%;
+    height: 200px;
+    padding-left:5px;
+    padding-top:5px;
+
+}
+
+.box .donorname {
+    margin-top: 3px; 
+    font-family: 'Nunito', sans-serif;
+    font-size:medium;
+    text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -1px;
+}
+
+.box .bloodgroup,.donationnum,.membersince {
+    margin-top:60px;
+    margin-left:10px;
+    color: red;
+    font-size:small;
+    text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -1px;
+}
+
+.box .donationnum,.membersince {
+    margin-top:2px;
+    margin-left:10px;
+    color: red;
+    font-size:small;
+    text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -1px;
+}
+
+.box .bloodgroup:before {
+    content: 'Blood Group: ';
+    color: black;
+}
+
+
+.box .donationnum:before {
+    content: 'No. of Donations: ';
+    color: black;
+}
+.box .membersince:before {
+    content: 'Member Since: ';
+    color: black;
+}
+
+
+.ribbon {
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    text-align: right;
+}
+
+    .ribbon span {
+        font-size: 10px;
+        font-weight: bold;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 20px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        width: 100px;
+        display: block;
+        background: #79A70A;
+        background: linear-gradient(#F70505 0%, #8F0808 100%);
+        box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+        position: absolute;
+        top: 19px;
+        left: -21px;
+    }
+
+        .ribbon span::before {
+            content: "";
             position: absolute;
-            left: -5px;
-            top: -5px;
-            z-index: 1;
-            overflow: hidden;
-            width: 75px;
-            height: 75px;
-            text-align: right;
+            left: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid #8F0808;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #8F0808;
         }
 
-            .ribbon span {
-                font-size: 10px;
-                font-weight: bold;
-                color: #FFF;
-                text-transform: uppercase;
-                text-align: center;
-                line-height: 20px;
-                transform: rotate(-45deg);
-                -webkit-transform: rotate(-45deg);
-                width: 100px;
-                display: block;
-                background: #79A70A;
-                background: linear-gradient(#F70505 0%, #8F0808 100%);
-                box shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
-                position: absolute;
-                top: 19px;
-                left: -21px;
-            }
+        .ribbon span::after {
+            content: "";
+            position: absolute;
+            right: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid transparent;
+            border-right: 3px solid #8F0808;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #8F0808;
+        }
 
-                .ribbon span::before {
-                    content: "";
-                    position: absolute;
-                    left: 0px;
-                    top: 100%;
-                    z-index: -1;
-                    border-left: 3px solid #8F0808;
-                    border-right: 3px solid transparent;
-                    border-bottom: 3px solid transparent;
-                    border-top: 3px solid #8F0808;
-                }
+ 
 
-                .ribbon span::after {
-                    content: "";
-                    position: absolute;
-                    right: 0px;
-                    top: 100%;
-                    z-index: -1;
-                    border-left: 3px solid transparent;
-                    border-right: 3px solid #8F0808;
-                    border-bottom: 3px solid transparent;
-                    border-top: 3px solid #8F0808;
-                }
+h1.insetType {
+  
+  font-family: Limelight, Georgia, "Times New Roman", Times, serif;
+  font-size: 35px;
+  color: #0D4383;
+  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+}

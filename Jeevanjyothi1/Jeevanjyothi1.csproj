@@ -77,12 +77,16 @@
     <Content Include="images\7.png" />
     <Content Include="images\8.png" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\donoros\donor1.jpg" />
+    <Content Include="images\donoros\donor2.jpg" />
+    <Content Include="images\donoros\donor3.jpg" />
     <Content Include="images\form_bg.jpg" />
     <Content Include="js\placeholder.min.js" />
     <Content Include="fonts\icomoon\.DS_Store" />
     <Content Include="fonts\icomoon\icomoon.eot" />
     <Content Include="fonts\icomoon\icomoon.ttf" />
     <Content Include="fonts\icomoon\icomoon.woff" />
+    <Content Include="info.aspx" />
     <None Include="Properties\PublishProfiles\new.jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -115,6 +119,26 @@
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\selectFx.js" />
     <Content Include="js\show-contact-buttons.js" />
+    <Content Include="regass\css\bootstrap.css" />
+    <Content Include="regass\css\m-buttons.min.css" />
+    <Content Include="regass\css\m-forms.min.css" />
+    <Content Include="regass\css\m-icons.min.css" />
+    <Content Include="regass\css\m-normalize.min.css" />
+    <Content Include="regass\css\m-styles.min.css" />
+    <Content Include="regass\css\styles.css" />
+    <Content Include="regass\img\bootstrap.png" />
+    <Content Include="regass\img\cross.png" />
+    <Content Include="regass\img\glyphicons-halflings-white.png" />
+    <Content Include="regass\img\glyphicons-halflings.png" />
+    <Content Include="regass\img\need.png" />
+    <Content Include="regass\img\share.png" />
+    <Content Include="regass\img\starrynight.png" />
+    <Content Include="regass\img\syncfusion-icons-white.png" />
+    <Content Include="regass\img\syncfusion-icons.png" />
+    <Content Include="regass\js\bootstrap.min.js" />
+    <Content Include="regass\js\m-dropdown.min.js" />
+    <Content Include="regass\js\m-radio.min.js" />
+    <Content Include="register.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
@@ -141,7 +165,22 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="info.aspx.cs">
+      <DependentUpon>info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="info.aspx.designer.cs">
+      <DependentUpon>info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
