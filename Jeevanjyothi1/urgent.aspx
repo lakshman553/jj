@@ -43,10 +43,14 @@
  
       body
       {
+          /*background-image:url('images/brushed-alum-dark.png');
+        background-position:top left;
+        background-repeat:repeat;
+        background-color:white;*/
           background-image:url('images/brushed-alum-dark.png');
         background-position:top left;
         background-repeat:repeat;
-        background-color:lightblue;
+        background-color:wheat;
     }
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
@@ -55,7 +59,7 @@
   <div class="container">
 
       <center>
-      <img style="margin-top:5px;width:30%;height:100px" src="images/finalLogo.png" />
+      <img style="margin-top:5px;width:50%;height:120px" src="images/finalLogo.png" />
           </center>
 </div>
 

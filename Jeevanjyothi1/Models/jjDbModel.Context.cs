@@ -28,5 +28,6 @@ namespace Jeevanjyothi1.Models
         public virtual DbSet<bloodgroup> bloodgroups { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<smsoutput> smsoutputs { get; set; }
+        public virtual DbSet<requirement> requirements { get; set; }
     }
 }

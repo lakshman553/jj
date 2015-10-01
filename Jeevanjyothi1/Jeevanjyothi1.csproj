@@ -134,6 +134,8 @@
       <DependentUpon>jjDbModel.edmx</DependentUpon>
       <LastGenOutput>jjDbModel.cs</LastGenOutput>
     </Content>
+    <None Include="Properties\PublishProfiles\jeevanjyothi.org - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\jjbd.pubxml" />
     <None Include="Properties\PublishProfiles\new.jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -195,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\requirementsController.cs" />
     <Compile Include="Controllers\usersController.cs" />
     <Compile Include="donors.aspx.cs">
       <DependentUpon>donors.aspx</DependentUpon>
@@ -237,6 +240,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>jjDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\requirement.cs">
+      <DependentUpon>jjDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\smsoutput.cs">
       <DependentUpon>jjDbModel.tt</DependentUpon>

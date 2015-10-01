@@ -24,7 +24,7 @@
 <div class="container">
 
       <center>
-      <img style="margin-top:5px;margin-bottom:10px;width:30%;height:100px" src="images/finalLogo.png" />
+      <img style="margin-top:5px;width:50%;height:120px" src="images/finalLogo.png" />
           </center>
 </div>
 

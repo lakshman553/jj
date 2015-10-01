@@ -75,6 +75,25 @@ namespace Jeevanjyothi1.Controllers
         }
 
 
+        [Route("pass/{id}/{oldPass}/{newPass}")]
+        [HttpGet]
+        public int chngPass(int id, string oldPass, string newPass)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            oldPass = Encrypt(oldPass);
+
+            if (db.users.Count(recordset => recordset.id == id && recordset.password.Equals(oldPass))  == 0) {
+                return 0;
+            }
+            else
+            {
+                user user = db.users.Find(id);
+                user.password = Encrypt(newPass);
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;  
+                return db.SaveChanges();
+            }
+        }
+
         [Route("validate/{userid}/{password}")]
         [HttpGet]
         public dynamic checkLogin(long userid, string password)
@@ -84,17 +103,12 @@ namespace Jeevanjyothi1.Controllers
 
             password = Encrypt(password);
 
-
-
             var abc = (from recordset in db.users
                        where recordset.mobile == userid && recordset.password.Equals(password)
                        select recordset);
 
             return abc;
 
-
-//            return db.users.Count(recordset => recordset.mobile == userid && recordset.password.Equals(password));
-        
         }
 
         // POST: api/users

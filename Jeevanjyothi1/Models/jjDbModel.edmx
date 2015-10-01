@@ -12,6 +12,19 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="bloodgroup" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="requirement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="requiredaddress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="bloodgroup" Type="int" Nullable="false" />
+          <Property Name="requiredcity" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="requiredby" Type="date" Nullable="false" />
+          <Property Name="requestedon" Type="date" Nullable="false" />
+          <Property Name="postFlag" Type="nchar" MaxLength="1" />
+        </EntityType>
         <EntityType Name="smsoutput">
           <Key>
             <PropertyRef Name="Id" />
@@ -39,6 +52,18 @@
           <Property Name="createdate" Type="datetime" Nullable="false" />
           <Property Name="modifieddate" Type="datetime" />
         </EntityType>
+        <Association Name="FK_requirement_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="requirement" Type="Self.requirement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="requirement">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_users_bloodgroups">
           <End Role="bloodgroups" Type="Self.bloodgroups" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
@@ -53,8 +78,13 @@
         </Association>
         <EntityContainer Name="jeevanjyothi_dbModelStoreContainer">
           <EntitySet Name="bloodgroups" EntityType="Self.bloodgroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="requirement" EntityType="Self.requirement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="smsoutput" EntityType="Self.smsoutput" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_requirement_users" Association="Self.FK_requirement_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="requirement" EntitySet="requirement" />
+          </AssociationSet>
           <AssociationSet Name="FK_users_bloodgroups" Association="Self.FK_users_bloodgroups">
             <End Role="bloodgroups" EntitySet="bloodgroups" />
             <End Role="users" EntitySet="users" />
@@ -88,6 +118,7 @@
           <NavigationProperty Name="bloodgroup1" Relationship="Self.FK_users_bloodgroups" FromRole="users" ToRole="bloodgroups" />
           <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modifieddate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="requirements" Relationship="jeevanjyothi_dbModel.FK_requirement_users" FromRole="user" ToRole="requirement" />
         </EntityType>
         <Association Name="FK_users_bloodgroups">
           <End Role="bloodgroups" Type="Self.bloodgroup" Multiplicity="1" />
@@ -109,6 +140,11 @@
             <End Role="users" EntitySet="users" />
           </AssociationSet>
           <EntitySet Name="smsoutputs" EntityType="jeevanjyothi_dbModel.smsoutput" />
+          <EntitySet Name="requirements" EntityType="jeevanjyothi_dbModel.requirement" />
+          <AssociationSet Name="FK_requirement_users" Association="jeevanjyothi_dbModel.FK_requirement_users">
+            <End Role="user" EntitySet="users" />
+            <End Role="requirement" EntitySet="requirements" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="smsoutput">
           <Key>
@@ -121,6 +157,32 @@
           <Property Name="modifiedDate" Type="DateTime" Precision="3" />
           <Property Name="actionid" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="requirement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="requiredaddress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bloodgroup" Type="Int32" Nullable="false" />
+          <Property Name="requiredcity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="requiredby" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="requestedon" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="user" Relationship="jeevanjyothi_dbModel.FK_requirement_users" FromRole="requirement" ToRole="user" />
+          <Property Name="postFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_requirement_users">
+          <End Type="jeevanjyothi_dbModel.user" Role="user" Multiplicity="1" />
+          <End Type="jeevanjyothi_dbModel.requirement" Role="requirement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="requirement">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -161,6 +223,20 @@
                 <ScalarProperty Name="output" ColumnName="output" />
                 <ScalarProperty Name="sentAction" ColumnName="sentAction" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="requirements">
+            <EntityTypeMapping TypeName="jeevanjyothi_dbModel.requirement">
+              <MappingFragment StoreEntitySet="requirement">
+                <ScalarProperty Name="postFlag" ColumnName="postFlag" />
+                <ScalarProperty Name="requestedon" ColumnName="requestedon" />
+                <ScalarProperty Name="requiredby" ColumnName="requiredby" />
+                <ScalarProperty Name="requiredcity" ColumnName="requiredcity" />
+                <ScalarProperty Name="bloodgroup" ColumnName="bloodgroup" />
+                <ScalarProperty Name="requiredaddress" ColumnName="requiredaddress" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

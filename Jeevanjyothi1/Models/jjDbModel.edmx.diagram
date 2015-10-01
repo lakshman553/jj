@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="jeevanjyothi_dbModel.user" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="jeevanjyothi_dbModel.FK_users_bloodgroups" ManuallyRouted="false" />
         <EntityTypeShape EntityType="jeevanjyothi_dbModel.smsoutput" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="jeevanjyothi_dbModel.requirement" Width="1.5" PointX="6.5" PointY="3.5" />
+        <AssociationConnector Association="jeevanjyothi_dbModel.FK_requirement_users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

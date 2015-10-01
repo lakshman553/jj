@@ -14,6 +14,11 @@ namespace Jeevanjyothi1.Models
     
     public partial class user
     {
+        public user()
+        {
+            this.requirements = new HashSet<requirement>();
+        }
+    
         public int id { get; set; }
         public string fullname { get; set; }
         public long mobile { get; set; }
@@ -27,5 +32,6 @@ namespace Jeevanjyothi1.Models
         public Nullable<System.DateTime> modifieddate { get; set; }
     
         public virtual bloodgroup bloodgroup1 { get; set; }
+        public virtual ICollection<requirement> requirements { get; set; }
     }
 }
