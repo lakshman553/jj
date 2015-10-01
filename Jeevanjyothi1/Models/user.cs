@@ -23,6 +23,8 @@ namespace Jeevanjyothi1.Models
         public string email { get; set; }
         public Nullable<System.DateTime> dob { get; set; }
         public Nullable<System.DateTime> lbd { get; set; }
+        public System.DateTime createdate { get; set; }
+        public Nullable<System.DateTime> modifieddate { get; set; }
     
         public virtual bloodgroup bloodgroup1 { get; set; }
     }

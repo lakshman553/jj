@@ -4,13 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="jeevanjyothi_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="jeevanjyothi_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="bloodgroups">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="bloodgroup" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="smsoutput">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sentAction" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="output" Type="nvarchar(max)" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+          <Property Name="modifiedDate" Type="datetime" />
+          <Property Name="actionid" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -25,6 +36,8 @@
           <Property Name="email" Type="nvarchar" MaxLength="100" />
           <Property Name="dob" Type="date" />
           <Property Name="lbd" Type="date" />
+          <Property Name="createdate" Type="datetime" Nullable="false" />
+          <Property Name="modifieddate" Type="datetime" />
         </EntityType>
         <Association Name="FK_users_bloodgroups">
           <End Role="bloodgroups" Type="Self.bloodgroups" Multiplicity="1" />
@@ -40,14 +53,14 @@
         </Association>
         <EntityContainer Name="jeevanjyothi_dbModelStoreContainer">
           <EntitySet Name="bloodgroups" EntityType="Self.bloodgroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="smsoutput" EntityType="Self.smsoutput" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_users_bloodgroups" Association="Self.FK_users_bloodgroups">
             <End Role="bloodgroups" EntitySet="bloodgroups" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="jeevanjyothi_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -73,6 +86,8 @@
           <Property Name="dob" Type="DateTime" Precision="0" />
           <Property Name="lbd" Type="DateTime" Precision="0" />
           <NavigationProperty Name="bloodgroup1" Relationship="Self.FK_users_bloodgroups" FromRole="users" ToRole="bloodgroups" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifieddate" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_users_bloodgroups">
           <End Role="bloodgroups" Type="Self.bloodgroup" Multiplicity="1" />
@@ -93,7 +108,19 @@
             <End Role="bloodgroups" EntitySet="bloodgroups" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
+          <EntitySet Name="smsoutputs" EntityType="jeevanjyothi_dbModel.smsoutput" />
         </EntityContainer>
+        <EntityType Name="smsoutput">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sentAction" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="output" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="actionid" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -111,6 +138,8 @@
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="jeevanjyothi_dbModel.user">
               <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fullname" ColumnName="fullname" />
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
@@ -120,6 +149,18 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="dob" ColumnName="dob" />
                 <ScalarProperty Name="lbd" ColumnName="lbd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="smsoutputs">
+            <EntityTypeMapping TypeName="jeevanjyothi_dbModel.smsoutput">
+              <MappingFragment StoreEntitySet="smsoutput">
+                <ScalarProperty Name="actionid" ColumnName="actionid" />
+                <ScalarProperty Name="modifiedDate" ColumnName="modifiedDate" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="output" ColumnName="output" />
+                <ScalarProperty Name="sentAction" ColumnName="sentAction" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

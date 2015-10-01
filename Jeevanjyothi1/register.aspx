@@ -20,13 +20,24 @@
         ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
             color: transparent;
         }
+
+        .regcenter {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+        .centercontents {
+    text-align: center !important;
+}
     </style>
 
 </head>
 <body>
     <div class="container">
         <br />
-        <div class="col-lg-8 col-sm-12 col-md-12">
+        <div class="col-lg-offset-2  ">
+        <div class="col-lg-10 col-sm-12 col-md-12">
             <div class="panel panel-danger">
                 <div class="panel-heading">Register As Donor</div>
                 <div class="panel-body">
@@ -139,7 +150,7 @@
                                 </div>
 
                             </div>
-                              <div class="form-group">
+                              <%--<div class="form-group">
                                 <label class="col-lg-2 control-label">&nbsp;</label>
                                 <div class="col-lg-8">
 
@@ -147,12 +158,12 @@
                                     <span class="help-block">Please select the check-box </span>
 
                                     </div>  
-                        </div>
+                        </div>--%>
                             <br />
                             <div class="form-group">
                                 <div class="col-lg-8 col-lg-offset-2">
-                                    <button type="submit" class="btn btn-danger">Register</button>
-                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                    <button type="submit" id="submitButton" class="btn btn-danger">Register</button>
+                                    <button type="reset" id="clearButton" class="btn btn-default">Cancel</button>
                                     <span class="help-block">By clicking on register, you agree to the Terms & Conditions of Jeevanjyothi.Org</span>
                                 
                                 </div>
@@ -163,7 +174,7 @@
             </div>
         </div>
     </div>
-
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -179,19 +190,32 @@
         $(".form-horizontal").submit(function (e) {
             e.preventDefault();
 
-            //alert($('input[name=bloodGrpRadio]:checked').val());
+            $('#clearButton').prop('disabled', true);
+            $('#submitButton').prop('disabled', true);
 
-            var url = "http://www.metamorphsystems.com/index.php/api/bulk-sms?username=sujanmanikanta&password=123456&from=JVNJYT&to=";
-            var message = "Dear " + $('#fullName').val() + ", Thank you for registering with Jeevanjyothi.org.";
-            url = url + $("#mobileNo").val() + '&message=' + encodeURIComponent(message);
+            var posting = $.post('api/users', { fullname: $('#fullName').val(), mobile: $('#mobileNo').val(), bloodgroup: $('input[name=bloodGrpRadio]:checked').val(), email: $('#inputEmail').val(), city: $('#city').val(), dob: $('#dob').val(), lbd: $('#lastDonation').val() });
 
-            //$.ajax({
-            //    url: url
-            //    });
+            posting.done(function (data) {
+                if (data.Id == 0) {
+                    alert("User Not Created");
+                }
+                else
+                {
+                    $(".form-horizontal").trigger("reset");
+                    alert("User Created Successfully");
+
+                    $('#submitButton').prop('disabled', false);
+                    $('#clearButton').prop('disabled', false);
+
+                }
+            });
         });
 
 
        
     </script>
+
+    
+
 </body>
 </html>
