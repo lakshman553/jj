@@ -86,6 +86,7 @@
     <Content Include="css\donoros.css" />
     <Content Include="css\header.css" />
     <Content Include="css\normalize.css" />
+    <Content Include="css\toastr.css" />
     <Content Include="donors.aspx" />
     <Content Include="fonts\elegant\ElegantIcons.eot" />
     <Content Include="fonts\elegant\ElegantIcons.ttf" />
@@ -105,6 +106,7 @@
     <Content Include="images\donoros\donor1.jpg" />
     <Content Include="images\donoros\donor2.jpg" />
     <Content Include="images\donoros\donor3.jpg" />
+    <Content Include="images\finalLogo.png" />
     <Content Include="images\form_bg.jpg" />
     <Content Include="js\placeholder.min.js" />
     <Content Include="fonts\icomoon\.DS_Store" />
@@ -112,6 +114,8 @@
     <Content Include="fonts\icomoon\icomoon.ttf" />
     <Content Include="fonts\icomoon\icomoon.woff" />
     <Content Include="info.aspx" />
+    <Content Include="js\toastr.js" />
+    <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Models\jjDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -182,9 +186,8 @@
     <Content Include="regass\js\m-dropdown.min.js" />
     <Content Include="regass\js\m-radio.min.js" />
     <Content Include="register.aspx" />
-    <Content Include="secured\changepassword.aspx" />
-    <Content Include="secured\forgotpassword.aspx" />
-    <Content Include="secured\userprofile.aspx" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="userprofile.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
@@ -207,6 +210,13 @@
     </Compile>
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\bloodgroup.cs">
       <DependentUpon>jjDbModel.tt</DependentUpon>
@@ -254,25 +264,18 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="secured\changepassword.aspx.cs">
-      <DependentUpon>changepassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="secured\changepassword.aspx.designer.cs">
-      <DependentUpon>changepassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="secured\forgotpassword.aspx.cs">
+    <Compile Include="forgotpassword.aspx.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="secured\forgotpassword.aspx.designer.cs">
+    <Compile Include="forgotpassword.aspx.designer.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="secured\userprofile.aspx.cs">
+    <Compile Include="userprofile.aspx.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="secured\userprofile.aspx.designer.cs">
+    <Compile Include="userprofile.aspx.designer.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

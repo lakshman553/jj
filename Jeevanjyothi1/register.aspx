@@ -5,7 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Donor Registration</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
     <link href="regass/css/bootstrap.css" rel="stylesheet" />
 
     <style>
@@ -21,19 +20,25 @@
             color: transparent;
         }
 
-        .regcenter {
-     float: none;
-     margin-left: auto;
-     margin-right: auto;
-}
-
-        .centercontents {
-    text-align: center !important;
-}
-    </style>
-
+ 
+      body
+      {
+          background-image:url('images/brushed-alum-dark.png');
+        background-position:top left;
+        background-repeat:repeat;
+        background-color:lightblue;
+    }
+  </style>
+  
 </head>
 <body>
+    <div class="container">
+
+      <center>
+      <img style="margin-top:10px;width:50%;height:150px" src="images/finalLogo.png" />
+          </center>
+</div>
+
     <div class="container">
         <br />
         <div class="col-lg-offset-2  ">
@@ -108,7 +113,8 @@
                                 <div class="col-lg-8">
                                     <div class="input-group">
                                         <span class="input-group-addon">+91</span>
-                                        <input type="number" class="form-control" required="required" id="mobileNo"/>
+                                        <%--<input type="number"  class="form-control" required="required" id="mobileNo"/>--%>
+                                        <input class="form-control" required="required" id="mobileNo" type="text" title="Mobile number shouldn't start with 0 or +91 and is of 10 digits" maxlength="10" pattern="[123456789][0-9]{9}" name="cvv"/>
                                     </div>
                                     <span class="help-block">Enter your mobile number without +91</span>
                                 </div>

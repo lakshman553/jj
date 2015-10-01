@@ -74,6 +74,29 @@ namespace Jeevanjyothi1.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+
+        [Route("validate/{userid}/{password}")]
+        [HttpGet]
+        public dynamic checkLogin(long userid, string password)
+        {
+
+            db.Configuration.ProxyCreationEnabled = false;
+
+            password = Encrypt(password);
+
+
+
+            var abc = (from recordset in db.users
+                       where recordset.mobile == userid && recordset.password.Equals(password)
+                       select recordset);
+
+            return abc;
+
+
+//            return db.users.Count(recordset => recordset.mobile == userid && recordset.password.Equals(password));
+        
+        }
+
         // POST: api/users
         [ResponseType(typeof(user))]
         public IHttpActionResult Postuser(user user)
