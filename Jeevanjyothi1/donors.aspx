@@ -6,10 +6,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Top Donors: Jeevanjyothi.org</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    
+        <link href="regass/css/bootstrap.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+
     <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'/>
+
     <link rel='stylesheet' href='css/animate.css' type='text/css' media='all' />
     <link rel="stylesheet" href="css/contact-buttons.css" />
     <link href="css/donoros.css" rel="stylesheet" />
@@ -17,7 +21,13 @@
 
 </head>
 <body>
-    <br />
+<div class="container">
+
+      <center>
+      <img style="margin-top:5px;margin-bottom:10px;width:30%;height:100px" src="images/finalLogo.png" />
+          </center>
+</div>
+
     <div class="container">
         <div class="row">
             <div class="titlebox animated fadeIn">

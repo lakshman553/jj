@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="Jeevanjyothi1.register" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="urgent.aspx.cs" Inherits="Jeevanjyothi1.urgent" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Donor Registration</title>
+    <title>Urgent Blood Registration</title>
     <link href="regass/css/bootstrap.css" rel="stylesheet" />
 
     <style>
@@ -16,7 +16,7 @@
 
         ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
         ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
-        ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {do
+        ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
             color: transparent;
         }
 
@@ -64,7 +64,7 @@
         <div class="col-lg-offset-2  ">
         <div class="col-lg-10 col-sm-12 col-md-12">
             <div class="panel panel-danger">
-                <div class="panel-heading">Register As Donor</div>
+                <div class="panel-heading">Request for urgent blood requirements</div>
                 <div class="panel-body">
                     <form class="form-horizontal" >
 
@@ -123,7 +123,7 @@
                                         </label>
 
                                     </div>
-                                    <span class="help-block">Select your blood group</span>
+                                    <span class="help-block">Select your blood group required</span>
 
                                 </div>
                             </div>
@@ -139,12 +139,23 @@
                                     <span class="help-block">Enter your mobile number without +91</span>
                                 </div>
                             </div>
+                        
+                        
 
                             <div class="form-group">
-                                <label class="col-lg-2 control-label">Current City<span class="text-danger"><sup><b>*</b></sup></span></label>
+                                <label class="col-lg-2 control-label">Address<span class="text-danger"><sup><b>*</b></sup></span></label>
+                                <div class="col-lg-8">
+                                    <textarea  class="form-control" id="address"  required="required" ></textarea>
+                                    <span class="help-block">Enter the hospital / home address when you need the blood</span>
+                                </div>
+
+                            </div>
+
+                        <div class="form-group">
+                                <label class="col-lg-2 control-label">City<span class="text-danger"><sup><b>*</b></sup></span></label>
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control" id="city"  required="required"/>
-                                    <span class="help-block">Enter your City</span>
+                                    <span class="help-block">Enter the city where you need the blood</span>
                                 </div>
 
                             </div>
@@ -158,39 +169,12 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">Date of Birth</label>
-                                <div class="col-lg-8">
-
-                                    <input type="date" id="dob" class="form-control" />
-                                    <span class="help-block">Select your date of birth</span>
-                                </div>
-
-                            </div>
-                        <div class="form-group">
-                                <label class="col-lg-2 control-label">Last Blood Donation</label>
-                                <div class="col-lg-8">
-
-                                    <input type="date" id="lastDonation" class="form-control" />
-                                    <span class="help-block">Select the date when you last donated blood</span>
-                                </div>
-
-                            </div>
-                              <%--<div class="form-group">
-                                <label class="col-lg-2 control-label">&nbsp;</label>
-                                <div class="col-lg-8">
-
-                            <div class="g-recaptcha" data-size="normal" data-sitekey="6Lfsxw0TAAAAAMss0Bp_MXgkkokiHyIkfBISTz2X"></div>
-                                    <span class="help-block">Please select the check-box </span>
-
-                                    </div>  
-                        </div>--%>
                             <br />
                             <div class="form-group">
                                 <div class="col-lg-8 col-lg-offset-2">
-                                    <button type="submit" id="submitButton" class="btn btn-danger">Register</button>
+                                    <button type="submit" id="submitButton" class="btn btn-danger">Request</button>
                                     <button type="reset" id="clearButton" class="btn btn-default">Cancel</button>
-                                    <span class="help-block">By clicking on register, you agree to the Terms & Conditions of Jeevanjyothi.Org</span>
+                                    <span class="help-block">By clicking on request, you agree to the Terms & Conditions of Jeevanjyothi.Org</span>
                                 
                                 </div>
                             </div>
@@ -233,40 +217,40 @@
     
         
 
-        $(".form-horizontal").submit(function (e) {
+        //$(".form-horizontal").submit(function (e) {
 
-            $('#modalContent').html('<center><i class="fa fa-spinner fa-pulse fa-2x"></i><br />Please Wait</center>');
+        //    $('#modalContent').html('<center><i class="fa fa-spinner fa-pulse fa-2x"></i><br />Please Wait</center>');
 
-            $('#myModal').modal({
-                backdrop: 'static',
-                keyboard: false
-            })
+        //    $('#myModal').modal({
+        //        backdrop: 'static',
+        //        keyboard: false
+        //    })
 
-            $('#myModal').modal();
+        //    $('#myModal').modal();
 
-            e.preventDefault();
+        //    e.preventDefault();
 
-            $('#clearButton').prop('disabled', true);
-            $('#submitButton').prop('disabled', true);
+        //    $('#clearButton').prop('disabled', true);
+        //    $('#submitButton').prop('disabled', true);
 
-            var posting = $.post('api/users', { fullname: $('#fullName').val(), mobile: $('#mobileNo').val(), bloodgroup: $('input[name=bloodGrpRadio]:checked').val(), email: $('#inputEmail').val(), city: $('#city').val(), dob: $('#dob').val(), lbd: $('#lastDonation').val() });
+        //    var posting = $.post('api/users', { fullname: $('#fullName').val(), mobile: $('#mobileNo').val(), bloodgroup: $('input[name=bloodGrpRadio]:checked').val(), email: $('#inputEmail').val(), city: $('#city').val() });
 
-            posting.done(function (data) {
-                if (data.Id == 0) {
-                    alert("User Not Created");
-                }
-                else
-                {
-                    $(".form-horizontal").trigger("reset");
-                    $('#modalContent').html('');
-                    $('#modalContent').html('<center><p>User Created Successfully</p><br /><a href="register.aspx">New Registration</a> | <a href="login.aspx">View Profile</a></center>');
+        //    posting.done(function (data) {
+        //        if (data.Id == 0) {
+        //            alert("User Not Created");
+        //        }
+        //        else
+        //        {
+        //            $(".form-horizontal").trigger("reset");
+        //            $('#modalContent').html('');
+        //            $('#modalContent').html('<center><p>User Created Successfully</p><br /><a href="register.aspx">New Registration</a> | <a href="login.aspx">View Profile</a></center>');
 
-                    $('#submitButton').prop('disabled', false);
-                    $('#clearButton').prop('disabled', false);
+        //            $('#submitButton').prop('disabled', false);
+        //            $('#clearButton').prop('disabled', false);
 
-                }
-            });
-        });
+        //        }
+        //    });
+        //});
 
 
        

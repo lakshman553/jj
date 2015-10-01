@@ -7,9 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Jeevanjyothi1.secured {
+namespace Jeevanjyothi1 {
     
     
-    public partial class userprofile {
+    public partial class urgent {
     }
 }

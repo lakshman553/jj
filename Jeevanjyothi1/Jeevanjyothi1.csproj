@@ -187,6 +187,8 @@
     <Content Include="regass\js\m-radio.min.js" />
     <Content Include="register.aspx" />
     <Content Include="forgotpassword.aspx" />
+    <Content Include="post.aspx" />
+    <Content Include="urgent.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="Web.config" />
     <Content Include="index.aspx" />
@@ -270,6 +272,20 @@
     </Compile>
     <Compile Include="forgotpassword.aspx.designer.cs">
       <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="post.aspx.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="post.aspx.designer.cs">
+      <DependentUpon>post.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="urgent.aspx.cs">
+      <DependentUpon>urgent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="urgent.aspx.designer.cs">
+      <DependentUpon>urgent.aspx</DependentUpon>
     </Compile>
     <Compile Include="userprofile.aspx.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
