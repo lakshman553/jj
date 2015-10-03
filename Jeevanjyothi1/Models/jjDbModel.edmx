@@ -52,6 +52,24 @@
           <Property Name="createdate" Type="datetime" Nullable="false" />
           <Property Name="modifieddate" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'jjbddb.dbo.vdonorslist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vdonorslist">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Mobile No" />
+            <PropertyRef Name="Blood Group" />
+            <PropertyRef Name="Donor City" />
+            <PropertyRef Name="createdate" />
+          </Key>
+          <Property Name="Name" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="Mobile No" Type="bigint" Nullable="false" />
+          <Property Name="Blood Group" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Donor City" Type="nchar" MaxLength="255" Nullable="false" />
+          <Property Name="Donor Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Registered Date" Type="nvarchar" MaxLength="20" />
+          <Property Name="createdate" Type="datetime" Nullable="false" />
+        </EntityType>
         <Association Name="FK_requirement_users">
           <End Role="users" Type="Self.users" Multiplicity="1" />
           <End Role="requirement" Type="Self.requirement" Multiplicity="*" />
@@ -81,6 +99,17 @@
           <EntitySet Name="requirement" EntityType="Self.requirement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="smsoutput" EntityType="Self.smsoutput" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vdonorslist" EntityType="Self.vdonorslist" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vdonorslist].[Name] AS [Name], 
+    [vdonorslist].[Mobile No] AS [Mobile No], 
+    [vdonorslist].[Blood Group] AS [Blood Group], 
+    [vdonorslist].[Donor City] AS [Donor City], 
+    [vdonorslist].[Donor Email] AS [Donor Email], 
+    [vdonorslist].[Registered Date] AS [Registered Date], 
+    [vdonorslist].[createdate] AS [createdate]
+    FROM [dbo].[vdonorslist] AS [vdonorslist]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_requirement_users" Association="Self.FK_requirement_users">
             <End Role="users" EntitySet="users" />
             <End Role="requirement" EntitySet="requirement" />
@@ -145,6 +174,7 @@
             <End Role="user" EntitySet="users" />
             <End Role="requirement" EntitySet="requirements" />
           </AssociationSet>
+          <EntitySet Name="vdonorslists" EntityType="jeevanjyothi_dbModel.vdonorslist" />
         </EntityContainer>
         <EntityType Name="smsoutput">
           <Key>
@@ -183,6 +213,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="vdonorslist">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Mobile_No" />
+            <PropertyRef Name="Blood_Group" />
+            <PropertyRef Name="Donor_City" />
+            <PropertyRef Name="createdate" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Mobile_No" Type="Int64" Nullable="false" />
+          <Property Name="Blood_Group" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Donor_City" Type="String" Nullable="false" MaxLength="255" FixedLength="true" Unicode="true" />
+          <Property Name="Donor_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Registered_Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -237,6 +283,19 @@
                 <ScalarProperty Name="requiredaddress" ColumnName="requiredaddress" />
                 <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vdonorslists">
+            <EntityTypeMapping TypeName="jeevanjyothi_dbModel.vdonorslist">
+              <MappingFragment StoreEntitySet="vdonorslist">
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="Registered_Date" ColumnName="Registered Date" />
+                <ScalarProperty Name="Donor_Email" ColumnName="Donor Email" />
+                <ScalarProperty Name="Donor_City" ColumnName="Donor City" />
+                <ScalarProperty Name="Blood_Group" ColumnName="Blood Group" />
+                <ScalarProperty Name="Mobile_No" ColumnName="Mobile No" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

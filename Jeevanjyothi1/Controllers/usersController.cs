@@ -74,6 +74,14 @@ namespace Jeevanjyothi1.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        [Route("getusers/")]
+        [HttpGet]
+        public dynamic getDonorsList()
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var abc = db.vdonorslists.ToList();
+            return new { data = abc };
+        }
 
         [Route("pass/{id}/{oldPass}/{newPass}")]
         [HttpGet]

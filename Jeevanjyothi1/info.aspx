@@ -1,22 +1,62 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="info.aspx.cs" Inherits="Jeevanjyothi1.WebForm2" %>
 
-
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Jeevanjyothi.org</title>
+<head runat="server">
+    <title>Urgent Blood Registration</title>
+    <link href="regass/css/bootstrap.css" rel="stylesheet" />
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-    <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-    <link rel='stylesheet' href='css/animate.css' type='text/css' media='all' />
-    <link rel="stylesheet" href="css/contact-buttons.css" />
-    <link href="css/donoros.css" rel="stylesheet" />
+    <style>
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-   
+        ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+        ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+        ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+            color: transparent;
+        }
+
+        .vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events: all;
+}
+ 
+      body
+      {
+          background-image:url('images/brushed-alum-dark.png');
+        background-position:top left;
+        background-repeat:repeat;
+        background-color:wheat;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
 </head>
 <body>
+  <div class="container">
+
+      <center>
+      <img style="margin-top:5px;width:50%;height:120px" src="images/finalLogo.png" />
+          </center>
+</div>
 
 
     
@@ -29,7 +69,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-4" class="collapse">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-4" class="collapsed">
                             <i class="fa fa-angle-up control-icon"></i>
                             Blood Donation
                         </a>
@@ -1191,41 +1231,6 @@
 
         </div>
 
-        <footer class="site-footer">
-            <div class="top-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-4 col-xs-12 contact-info footer-widget">
-                            <h4 class="footer-widget-title">Contact Info</h4>
-                            <ul>
-                                <li>
-                                    <span>Phone:</span>
-                                    <a href="skype:+919395396232?action">(939) 5396 - 232</a>
-                                </li>
-                                <li>
-                                    <span>Email:</span>
-                                    <a href="mailto:your@supportemail.com">sujanmanikanta@gmail.com</a>
-                                </li>
-                            </ul>
-                        </div> <!-- /.col-md-3 -->
-                        <div class="col-md-5 col-sm-8 col-xs-12 footer-widget">
-                            <h4 class="footer-widget-title">Stay in touch with us</h4>
-                            <ul class="footer-social">
-                                <li><a href="#" data-toggle="tooltip" title="Facebook" class="fa fa-facebook"></a></li>
-                                <li><a href="#" data-toggle="tooltip" title="Twitter" class="fa fa-twitter"></a></li>
-                                <li><a href="#" data-toggle="tooltip" title="Linkedin" class="fa fa-linkedin"></a></li>
-                                <li><a href="#" data-toggle="tooltip" title="Flickr" class="fa fa-flickr"></a></li>
-                                <li><a href="#" data-toggle="tooltip" title="Youtube" class="fa fa-youtube"></a></li>
-                            </ul>
-                        </div> <!-- /.col-md-5 -->
-                        <div class="col-md-4 col-sm-12 col-xs-12 footer-widget">
-                            <h4 class="footer-widget-title">Privacy Policy</h4>
-                            <p>The contact details shared in the website are used by Jeevanjyothi.org only to help the people in need. The information <u>WILL NOT</u> be used for any unwanted purposes. </p>
-                        </div> <!-- /.col-md-4 -->
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div> <!-- /.top-footer -->
-        </footer> <!-- /.site-footer -->
 
         </div>
 
@@ -1233,9 +1238,9 @@
 
         
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="regass/js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="js/jquery.backgroundPosition-1.21.js"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"></script>
+
     <script src="js/jquery.contact-buttons.js"></script>
     <script src="js/show-contact-buttons.js"></script>
         

@@ -117,6 +117,7 @@
     <Content Include="js\toastr.js" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
+    <Content Include="Web.config" />
     <EntityDeploy Include="Models\jjDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>jjDbModel.Designer.cs</LastGenOutput>
@@ -135,6 +136,7 @@
       <LastGenOutput>jjDbModel.cs</LastGenOutput>
     </Content>
     <None Include="Properties\PublishProfiles\jeevanjyothi.org - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\jjbd %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\jjbd.pubxml" />
     <None Include="Properties\PublishProfiles\new.jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
@@ -192,7 +194,6 @@
     <Content Include="post.aspx" />
     <Content Include="urgent.aspx" />
     <Content Include="userprofile.aspx" />
-    <Content Include="Web.config" />
     <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +249,9 @@
       <DependentUpon>jjDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
+      <DependentUpon>jjDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vdonorslist.cs">
       <DependentUpon>jjDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

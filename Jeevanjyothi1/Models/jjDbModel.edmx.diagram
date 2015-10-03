@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="jeevanjyothi_dbModel.smsoutput" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="jeevanjyothi_dbModel.requirement" Width="1.5" PointX="6.5" PointY="3.5" />
         <AssociationConnector Association="jeevanjyothi_dbModel.FK_requirement_users" />
+        <EntityTypeShape EntityType="jeevanjyothi_dbModel.vdonorslist" Width="1.5" PointX="0.75" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

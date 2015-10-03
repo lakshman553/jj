@@ -35,6 +35,17 @@
 
 }
 
+.tablebox {
+    width: auto;
+    padding:15px;
+    height: auto;
+    border: 1px solid #BBB;
+    background-color: transparent ;
+    box-shadow: 5px 5px 5px #888888;
+    margin-bottom:15px;
+
+}
+
 
 .box img {
     width: 98%;
