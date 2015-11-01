@@ -84,30 +84,36 @@
     <Content Include="css\cs-select.css" />
     <Content Include="css\cs-skin-circular.css" />
     <Content Include="css\donoros.css" />
+    <Content Include="css\dropzone.css" />
     <Content Include="css\header.css" />
+    <Content Include="css\jquery.fileupload-noscript.css" />
+    <Content Include="css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="css\jquery.fileupload-ui.css" />
+    <Content Include="css\jquery.fileupload.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\toastr.css" />
     <Content Include="donors.aspx" />
+    <Content Include="fileUpload.aspx" />
     <Content Include="fonts\elegant\ElegantIcons.eot" />
     <Content Include="fonts\elegant\ElegantIcons.ttf" />
     <Content Include="fonts\elegant\ElegantIcons.woff" />
     <Content Include="fonts\elegant\ElegantIconsd41d.eot" />
     <Content Include="fonts\icomoon\icomoon.svg" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="images\1.png" />
-    <Content Include="images\2.png" />
-    <Content Include="images\3.png" />
-    <Content Include="images\4.png" />
-    <Content Include="images\5.png" />
-    <Content Include="images\6.png" />
-    <Content Include="images\7.png" />
-    <Content Include="images\8.png" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\donoros\donor1.jpg" />
     <Content Include="images\donoros\donor2.jpg" />
     <Content Include="images\donoros\donor3.jpg" />
     <Content Include="images\finalLogo.png" />
-    <Content Include="images\form_bg.jpg" />
+    <Content Include="images\users\noprofile.jpg" />
+    <Content Include="img\profilepic\MyPHOTO_1.jpg" />
+    <Content Include="js\cors\jquery.postmessage-transport.js" />
+    <Content Include="js\cors\jquery.xdr-transport.js" />
+    <Content Include="js\dropzone.js" />
+    <Content Include="js\jquery.iframe-transport.js" />
+    <Content Include="js\main.js" />
     <Content Include="js\placeholder.min.js" />
     <Content Include="fonts\icomoon\.DS_Store" />
     <Content Include="fonts\icomoon\icomoon.eot" />
@@ -115,6 +121,7 @@
     <Content Include="fonts\icomoon\icomoon.woff" />
     <Content Include="info.aspx" />
     <Content Include="js\toastr.js" />
+    <Content Include="js\vendor\jquery.ui.widget.js" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Web.config" />
@@ -135,6 +142,7 @@
       <DependentUpon>jjDbModel.edmx</DependentUpon>
       <LastGenOutput>jjDbModel.cs</LastGenOutput>
     </Content>
+    <Content Include="imageUpload.ashx" />
     <None Include="Properties\PublishProfiles\jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\jjbd %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\jjbd.pubxml" />
@@ -157,7 +165,6 @@
     <Content Include="fonts\elegant\ElegantIcons.svg" />
     <Content Include="home.aspx" />
     <Content Include="images\brushed-alum-dark.png" />
-    <Content Include="images\hoffman.png" />
     <Content Include="images\logo.png" />
     <Content Include="js\blur.min.js" />
     <Content Include="js\classie.js" />
@@ -207,6 +214,13 @@
     <Compile Include="donors.aspx.designer.cs">
       <DependentUpon>donors.aspx</DependentUpon>
     </Compile>
+    <Compile Include="fileUpload.aspx.cs">
+      <DependentUpon>fileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fileUpload.aspx.designer.cs">
+      <DependentUpon>fileUpload.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +230,9 @@
     </Compile>
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imageUpload.ashx.cs">
+      <DependentUpon>imageUpload.ashx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -309,7 +326,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\profilepic\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -30,6 +30,8 @@ namespace Jeevanjyothi1.Models
         public Nullable<System.DateTime> lbd { get; set; }
         public System.DateTime createdate { get; set; }
         public Nullable<System.DateTime> modifieddate { get; set; }
+        public string fathername { get; set; }
+        public string gender { get; set; }
     
         public virtual bloodgroup bloodgroup1 { get; set; }
         public virtual ICollection<requirement> requirements { get; set; }

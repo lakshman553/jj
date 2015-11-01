@@ -77,6 +77,27 @@
                                 </div>
                             </div>
 
+
+                        <div class="form-group">
+                                <label class="col-lg-2 control-label">Gender<span class="text-danger"><sup><b>*</b></sup></span></label>
+                                <div class="col-lg-8">
+                                    <div class="btn-group " id="gender" data-toggle="buttons"  >
+
+                                        <label class="btn btn-danger  btn-xs active">
+                                            <input type="radio" name="genderRadio" value="M" required="required"/>
+                                            Male
+                                        </label>
+
+                                        <label class="btn btn-danger  btn-xs active">
+                                            <input type="radio" name="genderRadio" value="F" required="required"/>
+                                            Female
+                                        </label>
+</div>
+                                    </div>
+                            </div>
+
+
+
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Blood Group<span class="text-danger"><sup><b>*</b></sup></span></label>
                                 <div class="col-lg-8">
@@ -157,6 +178,17 @@
                                     <span class="help-block">Enter your email address</span>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Father's Name</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" id="fathername"  />
+                                    <span class="help-block">Enter your City</span>
+                                </div>
+
+                            </div>
+
+
 
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Date of Birth</label>
@@ -249,7 +281,18 @@
             $('#clearButton').prop('disabled', true);
             $('#submitButton').prop('disabled', true);
 
-            var posting = $.post('api/users', { fullname: $('#fullName').val(), mobile: $('#mobileNo').val(), bloodgroup: $('input[name=bloodGrpRadio]:checked').val(), email: $('#inputEmail').val(), city: $('#city').val(), dob: $('#dob').val(), lbd: $('#lastDonation').val() });
+            var posting = $.post('api/users',
+                {
+                    fullname: $('#fullName').val(),
+                    mobile: $('#mobileNo').val(),
+                    bloodgroup: $('input[name=bloodGrpRadio]:checked').val(),
+                    gender: $('input[name=genderRadio]:checked').val(),
+                    email: $('#inputEmail').val(),
+                    city: $('#city').val(),
+                    fathername: $('#fathername').val(),
+                    dob: $('#dob').val(),
+                    lbd: $('#lastDonation').val()
+                });
 
             posting.done(function (data) {
                 if (data.Id == 0) {
