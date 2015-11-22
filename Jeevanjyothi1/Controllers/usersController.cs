@@ -165,19 +165,49 @@ namespace Jeevanjyothi1.Controllers
             }
         }
 
-        [Route("validate/{userid}/{password}")]
+        
+        [HttpPost]
+        [Route("updateLBD/")]
+        
+        public dynamic updateLBD(lbdModelClass lbdData)
+        {
+
+            db.Configuration.ProxyCreationEnabled = false;
+            try
+            {
+                user user = db.users.Find(lbdData.userId);
+                user.lbd = lbdData.lbd;
+                db.Entry(user).State = EntityState.Modified;
+
+                int saveChanges = db.SaveChanges();
+
+                return lbdData.lbd;
+            }
+            catch (Exception ex)
+            {
+                return "unknown";
+            }
+        }
+
+
+        [Route("validate/{mobile}/{password}")]
         [HttpGet]
-        public dynamic checkLogin(long userid, string password)
+        public List<user> checkLogin(long mobile, string password)
         {
 
             db.Configuration.ProxyCreationEnabled = false;
 
             password = Encrypt(password);
 
-            var abc = (from recordset in db.users
-                       where recordset.mobile == userid && recordset.password.Equals(password)
-                       select recordset);
-            return abc;
+            List<user> userList = (from recordset in db.users
+                       where recordset.mobile == mobile && recordset.password.Equals(password)
+                       select recordset).ToList();
+
+            //if (userList.Count() == 1)
+            //{
+            //}
+
+            return userList;
         }
 
         // POST: api/users
@@ -195,6 +225,7 @@ namespace Jeevanjyothi1.Controllers
 
             user.createdate = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
             user.password = Encrypt(defaultPassword);
+            user.status = "1";
 
             db.users.Add(user);
             db.SaveChanges();

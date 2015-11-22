@@ -53,6 +53,12 @@
           <Property Name="modifieddate" Type="datetime" />
           <Property Name="fathername" Type="varchar" MaxLength="255" />
           <Property Name="gender" Type="char" MaxLength="1" />
+          <Property Name="status" Type="char" MaxLength="1" />
+          <Property Name="address1" Type="nvarchar" MaxLength="100" />
+          <Property Name="address2" Type="nvarchar" MaxLength="100" />
+          <Property Name="district" Type="nvarchar" MaxLength="100" />
+          <Property Name="state" Type="nvarchar" MaxLength="100" />
+          <Property Name="pincode" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'jjbddb.dbo.vdonorslist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -152,6 +158,12 @@ warning 6002: The table/view 'jjbddb.dbo.vdonorslist' does not have a primary ke
           <NavigationProperty Name="requirements" Relationship="jeevanjyothi_dbModel.FK_requirement_users" FromRole="user" ToRole="requirement" />
           <Property Name="fathername" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="address1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="address2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="district" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pincode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_users_bloodgroups">
           <End Role="bloodgroups" Type="Self.bloodgroup" Multiplicity="1" />
@@ -250,6 +262,12 @@ warning 6002: The table/view 'jjbddb.dbo.vdonorslist' does not have a primary ke
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="jeevanjyothi_dbModel.user">
               <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="gender" ColumnName="gender" />
                 <ScalarProperty Name="fathername" ColumnName="fathername" />
                 <ScalarProperty Name="modifieddate" ColumnName="modifieddate" />

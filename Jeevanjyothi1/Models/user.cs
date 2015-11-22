@@ -32,6 +32,12 @@ namespace Jeevanjyothi1.Models
         public Nullable<System.DateTime> modifieddate { get; set; }
         public string fathername { get; set; }
         public string gender { get; set; }
+        public string status { get; set; }
+        public string address1 { get; set; }
+        public string address2 { get; set; }
+        public string district { get; set; }
+        public string state { get; set; }
+        public string pincode { get; set; }
     
         public virtual bloodgroup bloodgroup1 { get; set; }
         public virtual ICollection<requirement> requirements { get; set; }

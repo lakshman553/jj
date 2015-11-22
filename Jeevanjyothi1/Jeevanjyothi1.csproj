@@ -81,18 +81,24 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\cherry-styles.css" />
     <Content Include="css\cs-select.css" />
     <Content Include="css\cs-skin-circular.css" />
     <Content Include="css\donoros.css" />
     <Content Include="css\dropzone.css" />
+    <Content Include="css\dzbasic.css" />
     <Content Include="css\header.css" />
+    <Content Include="css\images\caret.png" />
+    <Content Include="css\images\menu.png" />
     <Content Include="css\jquery.fileupload-noscript.css" />
     <Content Include="css\jquery.fileupload-ui-noscript.css" />
     <Content Include="css\jquery.fileupload-ui.css" />
     <Content Include="css\jquery.fileupload.css" />
+    <Content Include="css\lightbox.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\toastr.css" />
     <Content Include="donors.aspx" />
+    <Content Include="events.html" />
     <Content Include="fileUpload.aspx" />
     <Content Include="fonts\elegant\ElegantIcons.eot" />
     <Content Include="fonts\elegant\ElegantIcons.ttf" />
@@ -101,19 +107,51 @@
     <Content Include="fonts\icomoon\icomoon.svg" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
-    <Content Include="images\1.png" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\close.png" />
     <Content Include="images\donoros\donor1.jpg" />
     <Content Include="images\donoros\donor2.jpg" />
     <Content Include="images\donoros\donor3.jpg" />
+    <Content Include="images\events\event1\1.JPG" />
+    <Content Include="images\events\event1\10.jpg" />
+    <Content Include="images\events\event1\11.jpg" />
+    <Content Include="images\events\event1\12.jpg" />
+    <Content Include="images\events\event1\13.jpg" />
+    <Content Include="images\events\event1\2.JPG" />
+    <Content Include="images\events\event1\3.JPG" />
+    <Content Include="images\events\event1\4.JPG" />
+    <Content Include="images\events\event1\5.JPG" />
+    <Content Include="images\events\event1\6.JPG" />
+    <Content Include="images\events\event1\7.jpg" />
+    <Content Include="images\events\event1\8.jpg" />
+    <Content Include="images\events\event1\9.jpg" />
+    <Content Include="images\events\event1\thumbs\1.JPG" />
+    <Content Include="images\events\event1\thumbs\10.jpg" />
+    <Content Include="images\events\event1\thumbs\11.jpg" />
+    <Content Include="images\events\event1\thumbs\12.jpg" />
+    <Content Include="images\events\event1\thumbs\13.jpg" />
+    <Content Include="images\events\event1\thumbs\2.JPG" />
+    <Content Include="images\events\event1\thumbs\3.JPG" />
+    <Content Include="images\events\event1\thumbs\4.JPG" />
+    <Content Include="images\events\event1\thumbs\5.JPG" />
+    <Content Include="images\events\event1\thumbs\6.JPG" />
+    <Content Include="images\events\event1\thumbs\7.jpg" />
+    <Content Include="images\events\event1\thumbs\8.jpg" />
+    <Content Include="images\events\event1\thumbs\9.jpg" />
     <Content Include="images\finalLogo.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\next.png" />
+    <Content Include="images\prev.png" />
     <Content Include="images\users\noprofile.jpg" />
     <Content Include="img\profilepic\MyPHOTO_1.jpg" />
+    <Content Include="js\cherry-script.js" />
     <Content Include="js\cors\jquery.postmessage-transport.js" />
     <Content Include="js\cors\jquery.xdr-transport.js" />
     <Content Include="js\dropzone.js" />
     <Content Include="js\jquery.iframe-transport.js" />
+    <Content Include="js\lightbox-plus-jquery.min.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\masonry.min.js" />
     <Content Include="js\placeholder.min.js" />
     <Content Include="fonts\icomoon\.DS_Store" />
     <Content Include="fonts\icomoon\icomoon.eot" />
@@ -122,6 +160,7 @@
     <Content Include="info.aspx" />
     <Content Include="js\toastr.js" />
     <Content Include="js\vendor\jquery.ui.widget.js" />
+    <Content Include="js\wow.min.js" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Web.config" />
@@ -259,6 +298,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>jjDbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\lbdModelClass.cs" />
     <Compile Include="Models\requirement.cs">
       <DependentUpon>jjDbModel.tt</DependentUpon>
     </Compile>
