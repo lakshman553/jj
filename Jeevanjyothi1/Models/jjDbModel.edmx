@@ -34,7 +34,7 @@
           <Property Name="output" Type="nvarchar(max)" />
           <Property Name="createDate" Type="datetime" Nullable="false" />
           <Property Name="modifiedDate" Type="datetime" />
-          <Property Name="actionid" Type="int" Nullable="false" />
+          <Property Name="actionid" Type="bigint" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -201,7 +201,7 @@ warning 6002: The table/view 'jjbddb.dbo.vdonorslist' does not have a primary ke
           <Property Name="output" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="createDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="actionid" Type="Int32" Nullable="false" />
+          <Property Name="actionid" Type="Int64" />
         </EntityType>
         <EntityType Name="requirement">
           <Key>

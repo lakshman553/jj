@@ -195,7 +195,7 @@
                                 <div class="col-lg-8">
 
                                     <input type="date" id="dob" class="form-control" />
-                                    <span class="help-block">Select your date of birth</span>
+                                    <span class="help-block">Select your date of birth in DD/MM/YYYY format</span>
                                 </div>
 
                             </div>
@@ -204,7 +204,7 @@
                                 <div class="col-lg-8">
 
                                     <input type="date" id="lastDonation" class="form-control" />
-                                    <span class="help-block">Select the date when you last donated blood</span>
+                                    <span class="help-block">Select the date when you last donated blood in DD/MM/YYYY format</span>
                                 </div>
 
                             </div>

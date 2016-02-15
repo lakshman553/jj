@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -183,9 +184,6 @@
     </Content>
     <Content Include="imageUpload.ashx" />
     <None Include="Properties\PublishProfiles\jeevanjyothi.org - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\jjbd %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\jjbd.pubxml" />
-    <None Include="Properties\PublishProfiles\new.jeevanjyothi.org - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -308,6 +306,7 @@
     <Compile Include="Models\user.cs">
       <DependentUpon>jjDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\userProfile.cs" />
     <Compile Include="Models\vdonorslist.cs">
       <DependentUpon>jjDbModel.tt</DependentUpon>
     </Compile>

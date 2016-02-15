@@ -19,6 +19,6 @@ namespace Jeevanjyothi1.Models
         public string output { get; set; }
         public System.DateTime createDate { get; set; }
         public Nullable<System.DateTime> modifiedDate { get; set; }
-        public int actionid { get; set; }
+        public Nullable<long> actionid { get; set; }
     }
 }

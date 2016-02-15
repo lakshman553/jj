@@ -103,6 +103,24 @@ namespace Jeevanjyothi1.Controllers
                 return db.SaveChanges();
             }
         }
+        [Route("updateProfile/")]
+        [HttpPost]
+
+        public int updateProfile (userProfile userProfile)
+        {
+            user user = db.users.Find(userProfile.userId);
+
+            user.address1 = userProfile.address1;
+            user.address2 = userProfile.address2;
+            user.city = userProfile.city;
+            user.state = userProfile.state;
+
+            db.Entry(user).State = EntityState.Modified;
+
+            return db.SaveChanges();
+
+
+        }
 
         [Route("resetpass/{mobileNo}")]
         [HttpGet]
@@ -260,6 +278,41 @@ namespace Jeevanjyothi1.Controllers
             }
 
             return CreatedAtRoute("DefaultApi", new { id = user.id }, user);
+        }
+
+        [Route("sendBloodDonorSMS/{mobile}")]
+        [HttpGet]
+
+        public dynamic sendBloodDonorSMS(Int64 mobile)
+        {
+            string smsBloodDonorsDay = WebConfigurationManager.AppSettings["smsBloodDonorsDay"];
+            string sendSingleSmsUrl = WebConfigurationManager.AppSettings["sendSingleSmsUrl"];
+            string smsUserId = WebConfigurationManager.AppSettings["smsUserId"];
+            string smsPassword = WebConfigurationManager.AppSettings["smsPassword"];
+            string smsFrom = WebConfigurationManager.AppSettings["smsFrom"];
+            TimeZoneInfo INDIAN_ZONE = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
+
+            sendSingleSmsUrl = String.Format(sendSingleSmsUrl, smsUserId, smsPassword, smsFrom, mobile, smsBloodDonorsDay, "&");
+
+
+            using (WebClient client = new WebClient())
+            {
+                if (mobile != 9115625847) { 
+                smsoutput smsoutput = new smsoutput();
+
+                smsoutput.sentAction = "m";
+                smsoutput.output = client.DownloadString(sendSingleSmsUrl); ;
+                smsoutput.createDate = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, INDIAN_ZONE);
+                smsoutput.actionid = mobile;
+
+                db.smsoutputs.Add(smsoutput);
+                return db.SaveChanges();
+                }
+
+                return "Change the mobile number to which you need to send";
+                 
+            }
+
         }
 
         // DELETE: api/users/5
